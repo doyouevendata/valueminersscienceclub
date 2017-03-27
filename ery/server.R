@@ -1,6 +1,10 @@
-library(shiny)
-library(plotly)
-library(moments)
+# Check if packages are installed and loaded.
+for (package in c("shiny","plotly","moments")) {
+  if (!require(package, character.only=T, quietly=T)) {
+    install.packages(package)
+    library(package, character.only=T)
+  }
+}
 
 server <- function(input, output) {
   
